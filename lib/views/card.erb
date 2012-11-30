@@ -1,0 +1,21 @@
+<div class="card">
+	<div class="<%= card.css_class %>">
+	  	<div class="corner top">
+		  <span class="number"><%= card.number %></span>
+		  <span><%= card.html_suit %></span>
+		</div>
+		<% if card.facecard? %>
+		  <span class="face middle_center">
+	        <img src="../../img/faces/face-<%= card.rank %>-<%= card.suit %>.png">
+	      </span>
+	    <% else %>
+	      <% card.inside_count.times do |i| %>
+	        <span class="suit <%= card.inside_location[i-1] %>"><%= card.html_suit %></span>
+	      <% end %>
+	    <% end %>
+        <div class="corner bottom">
+	      <span class="number"><%= card.number %></span>
+	      <span><%= card.html_suit %></span>
+	    </div>
+	</div>
+</div>

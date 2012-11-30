@@ -1,0 +1,7 @@
+<h2><%= @result %></h2>
+
+<% @player.hand.each do |card| %>
+  <%= erb :click_card, :locals => { :card => card } %>
+<% end %>
+<div class="clearfix"></div>
+<script src="../js/click_cards.js"></script>

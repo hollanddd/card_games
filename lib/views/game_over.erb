@@ -1,0 +1,32 @@
+<h1><%= @out_come %></h1>
+<h2>You snared <%= @player.books.count %>  fish!</h2>
+<h3><a href="/">play again?</a></h3>
+<h4><a href="/about">want more info?</a></h4>
+
+
+
+<% @players_books.each do |card| %>
+  <%= erb :card, :locals => { :card => card }%>
+<% end %>
+<div class="clearfix"></div>
+
+<h3>You shouldn't have cards.</h3>
+
+<% @player.hand.each do |card| %>
+  <%= erb :card => { :card => card }%>
+<% end %>
+<div class="clearfix"></div>
+
+<h2>Sinatra wrangled up <%= @frank.books.count %>  fish!</h2>
+
+<% @franks_books.each do |card| %>
+  <%= erb :card, :locals => { :card => card }%>
+<% end %>
+<div class="clearfix"></div>
+
+<h2>Sinatra shouldn't either</h3>
+
+<% @frank.hand.each do |card| %>
+  <%= erb :card, :locals => { :card => card }%>
+<% end %>
+<div class="clearfix"></div>

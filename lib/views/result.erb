@@ -1,0 +1,12 @@
+<h2><%= @result %></h2>
+<h3><a href="/your_turn">Click here to let Sinatra take his turn.</a></h3>
+<% if @player.books.count < 1 %>
+  <h3>You have yet to catch a fish.</h3>
+<% else %>
+  <h3>You have <%= @player.books.count %>  fish!</h3>
+    <% @books.each do |card| %>
+      <%= erb :card, :locals => { :card => card } %>
+    <% end %>
+    <div class="clearfix"></div>
+<% end %>
+</div>

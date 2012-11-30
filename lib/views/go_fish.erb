@@ -1,0 +1,9 @@
+<div id="index">
+	<h1>Go Fish</h1>
+	<h2>To start playing, click on a card from your hand.</h2>
+</div>
+<% @player.hand.each do |card| %>
+  <%= erb :click_card, :locals => { :card => card } %>
+<% end %>
+<div class="clearfix"></div>
+<script src="../js/click_cards.js"></script>
