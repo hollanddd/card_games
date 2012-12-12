@@ -1,4 +1,3 @@
-require 'sinatra/base'
 require File.dirname(__FILE__) + '/playing_cards.rb'
 
 class SinatraFishing < Sinatra::Base
